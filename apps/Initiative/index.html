@@ -10,62 +10,69 @@
 
     <link href="https://futurice.github.io/tamperefutucafe/font/font.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
   </head>
   <body>
-    <section>
       <div class="wrapper">
+        <form
+          id="form"
+          class="not-touched form"
+          action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSf-0AJMrCxPYTeB5G68gpmXomv46A4an_tMORZkSZYMPMKVug/formResponse"
+        >
 
-        <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSf-0AJMrCxPYTeB5G68gpmXomv46A4an_tMORZkSZYMPMKVug/formResponse">
-
-          <div class="form-group">
-            <p>Type_</p>
+          <div class="form-group initial-section section">
+            <div class="label">Hi, what type of thing <br />you have in mind?</div>
             <!-- MUTLIPLE CHOICE -->
             <div class="radios">
               <div class="input-group">
-                <label class="input-wrap"><input class="radio" type="radio" name="entry.1759831059" value="💡 Idea"/>
+                <label class="input-wrap">
+                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="💡 Idea"/>
                   <span class="input-label">💡 Idea</span>
                 </label>
               </div>
               <div class="input-group">
-                <label class="input-wrap"><input class="radio" type="radio" name="entry.1759831059" value="👍  Good"/>
+                <label class="input-wrap">
+                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="👍  Good"/>
                   <span class="input-label">👍  Good</span>
                 </label>
               </div>
               <div class="input-group">
-                <label class="input-wrap"><input class="radio" type="radio" name="entry.1759831059" value="👎 Not so good"/>
+                <label class="input-wrap">
+                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="👎 Not so good"/>
                   <span class="input-label">👎 Not so good</span>
                 </label>
               </div>
               <div class="input-group">
-                <label class="input-wrap"><input class="radio" type="radio" name="entry.1759831059" value="✅ Fact"/>
+                <label class="input-wrap">
+                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="✅ Fact"/>
                   <span class="input-label">✅ Fact</span>
                 </label>
               </div>
             </div>
           </div>
 
+          <div class="section closed-section">
+            <!-- MULTI-LINE TEXT FIELD -->
+            <div class="form-group">
+              <label><span class="label">Tell me more</span>
+                <textarea id="first-input" name="entry.825699909"/></textarea>
+              </label>
+            </div>
 
 
+            <!-- SINGLE LINE TEXT FIELD
+            <div class="form-group" >
+              <label><span class="label">Your Name</span>
+                <input name="entry.1253725610" type="text" autocomplete="off" />
+              </label>
+            </div>
+             -->
 
-          <!-- MULTI-LINE TEXT FIELD -->
-          <div class="form-group">
-            <label for="explain">What do You have in mind?
-              <textarea name="entry.825699909"/></textarea>
-            </label>
+            <!-- SUBMIT BUTTON -->
+            <input class="button" type="submit" value="Send the feedback">
           </div>
 
-
-          <!-- SINGLE LINE TEXT FIELD -->
-          <div class="form-group">
-            <label for="comfort">Your Name
-              <input name="entry.1253725610" type="text" id="comfort"/>
-            </label>
-          </div>
-
-          <!-- SUBMIT BUTTON -->
-          <input class="button" type="submit" value="Submit">
         </form>
       </div>
-    </section>
   </body>
 </htmle>

@@ -3,10 +3,12 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 body {
   background: #FFF;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
+  color: #210F00;
 }
 
 input,
@@ -15,6 +17,8 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 body, input, select, h1, h2, h3, h4, button {
@@ -22,7 +26,7 @@ body, input, select, h1, h2, h3, h4, button {
   -webkit-font-smoothing: antialiased;
 }
 
-/* SECTION WRAPPER */
+/* WRAPPER */
 .wrapper {
   padding: 0 25px;
   max-width: 500px;
@@ -30,31 +34,23 @@ body, input, select, h1, h2, h3, h4, button {
 }
 
 /* TYPOGRAPHY */
-h1 {
-  font-size: 30px;
-  margin-bottom: 10px;
-  font-weight: 300;
-}
-form p {
-  font-size: 18px;
-  margin: 50px 0 20px; 
-  line-height: 1.6;
-}
 form p,
-label[for="comfort"],
-label[for="explain"] {
+.label {
+  display: block;
   font-weight: bold;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 15px;
+  color: #7E878B;
 }
 
 
 
-/* SECTION */
-section {
-  background: #ffffff;
-  padding: 20px 0;
-}
 
 /* FORM STYLES */
+.form {
+  padding: 30px 0;
+}
 .radios {
   display: block;
 }
@@ -65,10 +61,12 @@ section {
 }
 
 .input-group {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  line-height: 35px;
+  margin-left: -20px;
   display: flex;
   align-items: center;
-  font-size: 30px;  
 }
 
 .input-label {
@@ -76,11 +74,13 @@ section {
   top: 7px;
   transition: all 0.2s;
   display: inline-block;
+  opacity: 0.4;
 }
 
 .radio:checked + .input-label {
-  color: #000;
-  transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1.2);
+  transform-origin: 0 50%;
 }
 
 .form-group {
@@ -106,18 +106,19 @@ textarea {
   padding: 6px 0;
   font-size: 16px;
   border: none;
-  border-bottom: 1px solid #666;
+  box-shadow: inset 0 -1px 0 #666;
   background: transparent;
-  margin-bottom: 50px;
   outline: none;
-}
-input[type="text"]{
-  width: 100%;
+  transition: box-shadow 0.3s;
 }
 
+input[type="text"]:focus,
+textarea:focus {
+  box-shadow: inset 0 -2px 0 #210F00;
+}
 
 textarea {
-  min-height: 80px;
+  min-height: 60px;
 }
 
 input[type="submit"] {
@@ -131,11 +132,68 @@ input[type="submit"] {
   background: #000;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
 }
 input[type="submit"]:hover {
   background: #000;
   cursor: pointer;
 }
+
+
+/* Orchestration */
+
+.section, .label {
+  transition: all 0.55s cubic-bezier(0.26, 0.79, 0.26, 1);
+}
+
+.closed-section:not(.initial-section) {
+  transform: translate3d(0, 20px, 0);
+  opacity: 0;
+  animation: slide-in 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+.not-touched .closed-section {
+  display: none;
+  animation: none;
+}
+
+.not-touched .initial-section {
+  display: block;
+  transform: translate3d(0, 10%, 0) scale(1.05);
+  opacity: 0;
+  animation: scale-fade-in 0.5s ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.not-touched .initial-section .label {
+  font-size: 4vh;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.not-touched .input-group {
+  font-size: 6vh;
+  line-height: 1.2;
+  padding-bottom: 3vh;
+}
+.not-touched .input-label {
+  opacity: 1;
+}
+
+
+@keyframes scale-fade-in {
+  from { opacity: 0; transform: translate3d(0, 10%, 0) scale(1.05); }
+  to   { opacity: 1; transform: translate3d(0, 10%, 0) scale(1); }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
