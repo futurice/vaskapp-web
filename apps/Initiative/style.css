@@ -15,17 +15,13 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
   -webkit-user-drag: none;
-  -ms-content-zooming: none;
   -webkit-touch-callout: none;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
   text-size-adjust: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -169,16 +165,16 @@ textarea {
   transition: all 0.2s;
 }
 
-.button:active {
+.button:active, .button:hover, .button:focus {
   background-color: #444;
+  -webkit-box-shadow: 0 10px 25px rgba(0,0,0, .2);
   box-shadow: 0 10px 25px rgba(0,0,0, .2);
 }
 
 /* Orchestration */
-
 .section, .label {
-  -webkit-transition: all 0.4s cubic-bezier(0.26, 0.79, 0.26, 1);
-  transition: all 0.4s cubic-bezier(0.26, 0.79, 0.26, 1);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .closed-section {
@@ -187,10 +183,10 @@ textarea {
   -webkit-transform: translate3d(0, 20px, 0);
   transform: translate3d(0, 20px, 0);
 
-  -webkit-animation: slide-in 0.5s cubic-bezier(0.26, 0.79, 0.26, 1);
+  -webkit-animation: slide-in 0.5s;
   -webkit-animation-fill-mode: forwards;
 
-  animation: slide-in 0.5s cubic-bezier(0.26, 0.79, 0.26, 1);
+  animation: slide-in 0.5s;
   animation-fill-mode: forwards;
 }
 
@@ -209,18 +205,6 @@ textarea {
 
   -webkit-transform: translate3d(0, 10%, 0);
   transform: translate3d(0, 10%, 0);
-
-  /*
-  opacity: 0;
-
-  -webkit-animation: scale-fade-in 0.5s cubic-bezier(0.26, 0.79, 0.26, 1);
-  animation: scale-fade-in 0.5s cubic-bezier(0.26, 0.79, 0.26, 1);
-
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-  */
 }
 
 .not-touched .initial-section .label {

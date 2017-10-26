@@ -26,25 +26,25 @@
             <div class="radios">
               <div class="input-group">
                 <label class="input-wrap">
-                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="💡 Idea"/>
+                  <input onChange="touchForm('IDEA')" class="radio" type="radio" name="entry.1759831059" value="💡 Idea"/>
                   <span class="input-label">💡 Idea</span>
                 </label>
               </div>
               <div class="input-group">
                 <label class="input-wrap">
-                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="👍  Good"/>
+                  <input onChange="touchForm('GOOD')" class="radio" type="radio" name="entry.1759831059" value="👍  Good"/>
                   <span class="input-label">👍  Good</span>
                 </label>
               </div>
               <div class="input-group">
                 <label class="input-wrap">
-                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="👎 Not so good"/>
+                  <input onChange="touchForm('NOT_GOOD')" class="radio" type="radio" name="entry.1759831059" value="👎 Not so good"/>
                   <span class="input-label">👎 Not so good</span>
                 </label>
               </div>
               <div class="input-group">
                 <label class="input-wrap">
-                  <input onChange="touchForm()" class="radio" type="radio" name="entry.1759831059" value="✅ Fact"/>
+                  <input onChange="touchForm('FACT')" class="radio" type="radio" name="entry.1759831059" value="✅ Fact"/>
                   <span class="input-label">✅ Fact</span>
                 </label>
               </div>
@@ -52,13 +52,11 @@
           </div>
 
           <div class="section closed-section">
-            <!-- MULTI-LINE TEXT FIELD -->
             <div class="form-group">
-              <label><span class="label">Tell me more</span>
+              <label><span class="label" id="question-label">Tell me more</span>
                 <textarea id="first-input" required name="entry.825699909"/></textarea>
               </label>
             </div>
-
 
             <!-- SINGLE LINE TEXT FIELD
             <div class="form-group" >
@@ -69,7 +67,7 @@
              -->
 
             <!-- SUBMIT BUTTON -->
-            <button class="button" type="submit">Send the feedback</button>
+            <button class="button" type="submit">Send feedback</button>
           </div>
 
         </form>
