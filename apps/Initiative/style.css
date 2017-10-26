@@ -1,0 +1,141 @@
+/* GENERAL */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #FFF;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body, input, select, h1, h2, h3, h4, button {
+  font-family: 'Futurice Regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SECTION WRAPPER */
+.wrapper {
+  padding: 0 25px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+form p {
+  font-size: 18px;
+  margin: 50px 0 20px; 
+  line-height: 1.6;
+}
+form p,
+label[for="comfort"],
+label[for="explain"] {
+  font-weight: bold;
+}
+
+
+
+/* SECTION */
+section {
+  background: #ffffff;
+  padding: 20px 0;
+}
+
+/* FORM STYLES */
+.radios {
+  display: block;
+}
+
+.radio {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-group {
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;  
+}
+
+.input-label {
+  position: relative;
+  top: 7px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.radio:checked + .input-label {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.form-group {
+  margin-bottom: 40px;
+}
+
+
+input[type="checkbox"], input[type="radio"] {
+  margin-right: 5px;
+}
+
+label[for="comfort"],
+label[for="explain"]{
+  display: block;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 6px 0;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #666;
+  background: transparent;
+  margin-bottom: 50px;
+  outline: none;
+}
+input[type="text"]{
+  width: 100%;
+}
+
+
+textarea {
+  min-height: 80px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 20px auto 50px;
+  height: 50px;
+  line-height: 54px;
+  min-width: 125px;
+  text-align: center;
+  padding: 0 50px;
+  background: #000;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+input[type="submit"]:hover {
+  background: #000;
+  cursor: pointer;
+}
