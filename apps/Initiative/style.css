@@ -91,6 +91,10 @@ form p,
   align-items: center;
 }
 
+.input-wrap:active {
+  opacity: 0.7;
+}
+
 .input-label {
   position: relative;
   top: 7px;
@@ -161,14 +165,20 @@ textarea {
 
   box-shadow: 0 8px 20px rgba(0,0,0, .1);
   -webkit-box-shadow: 0 8px 20px rgba(0,0,0, .1);
+
+  transition: all 0.2s;
 }
 
+.button:active {
+  background-color: #444;
+  box-shadow: 0 10px 25px rgba(0,0,0, .2);
+}
 
 /* Orchestration */
 
 .section, .label {
-  -webkit-transition: all 0.55s cubic-bezier(0.26, 0.79, 0.26, 1);
-  transition: all 0.55s cubic-bezier(0.26, 0.79, 0.26, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.26, 0.79, 0.26, 1);
+  transition: all 0.4s cubic-bezier(0.26, 0.79, 0.26, 1);
 }
 
 .closed-section {
@@ -189,12 +199,19 @@ textarea {
   animation: none;
 }
 
+.initial-section {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
 .not-touched .initial-section {
   display: block;
-  opacity: 0;
 
-  -webkit-transform: translate3d(0, 10%, 0) scale(1.05);
-  transform: translate3d(0, 10%, 0) scale(1.05);
+  -webkit-transform: translate3d(0, 10%, 0);
+  transform: translate3d(0, 10%, 0);
+
+  /*
+  opacity: 0;
 
   -webkit-animation: scale-fade-in 0.5s cubic-bezier(0.26, 0.79, 0.26, 1);
   animation: scale-fade-in 0.5s cubic-bezier(0.26, 0.79, 0.26, 1);
@@ -203,6 +220,7 @@ textarea {
   animation-fill-mode: forwards;
   -webkit-animation-delay: 0.5s;
   -webkit-animation-fill-mode: forwards;
+  */
 }
 
 .not-touched .initial-section .label {
