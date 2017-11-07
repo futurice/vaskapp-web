@@ -180,6 +180,8 @@ h2 {
 
 .button--cta {
   background: #FFF;
+  text-decoration: none;
+  color: #210F00;
   display: inline-block;
   padding: 20px 50px;
   border-radius: 30px;
