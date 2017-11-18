@@ -73,7 +73,7 @@ h2 {
 .mockup {
   max-width: 360px;
   display: inline-block;
-  margin: 0 30px -200px;
+  margin: 0 30px -200px 0;
 
   opacity: 0;
   animation: fade-in 0.6s;
